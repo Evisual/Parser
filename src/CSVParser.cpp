@@ -29,6 +29,7 @@ namespace Parser
 
         while(std::getline(file, line))
         {
+            int column = 0;
             std::string cell;
             std::vector<std::string> currentRowCells;
             for(auto &c : line)
@@ -38,6 +39,8 @@ namespace Parser
                     c = ' ';
                     currentRowCells.push_back(cell);
                     cell.clear();
+
+                    column++;
                 }
                 cell.push_back(c);
                 row.push_back(c);
@@ -45,12 +48,15 @@ namespace Parser
 
             i++;
 
+
             if(printLines)
                 std::cout << "Line: " << i << " " << line << std::endl;
 
             m_Rows.push_back(row);
             m_Cells.push_back(currentRowCells);
             row.clear();
+
+
         }
     }
 
