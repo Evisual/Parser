@@ -5,7 +5,7 @@ Parser to parse different filetypes. Currently only supports CSV.
 
 ### Parse File
 ```C++
-#include <CSVParser.h>
+#include <ParserIncludes.h>
 
 int main() 
 {
@@ -19,7 +19,7 @@ int main()
 ### Accessing Data
 
 ```C++
-#include <CSVParser.h>
+#include <ParserIncludes.h>
 
 Parser::CSVParser parser; // Initialize parser object
 
