@@ -16,7 +16,15 @@ namespace Parser
         inline std::string getColumn(int column) { return m_Columns[column]; }
         inline std::string getCell(int row, int column) { return m_Cells[row][column]; }
 
-        void ParseFile(std::string filepath, bool printLines=false) override;
+        inline int getTotalRows() { return m_Rows.size(); }
+        inline int getTotalColumns() { return m_Columns.size(); }
+        inline int getTotalCells() { return m_Rows.size()*m_Columns.size(); }
+
+        void ParseFile(std::string filepath) override;
+
+        bool printLines = false;
+        bool skipEmptyLines = false;
+        int fromLine = 0;
     private:
         std::vector<std::string> m_Rows;
         std::vector<std::string> m_Columns;

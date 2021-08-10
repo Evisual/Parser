@@ -11,7 +11,7 @@ namespace Parser {
     class Parse
     {
     public:
-        virtual void ParseFile(std::string filepath, bool printLines) = 0;
+        virtual void ParseFile(std::string filepath) = 0;
 
     private:
 
